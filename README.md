@@ -4,3 +4,6 @@
 
 What is a Gemfile?
 We create this in our repo to specify where the ruby gems are made, and what we require.
+Specified gem source.
+Specified ruby version.
+Added rspec to test and development groups.
