@@ -25,4 +25,13 @@ describe Oystercard do
   # card = double("card", :top_up => 50)
   end
 
+  describe "#deduct" do
+    it "deducts money" do
+    oystercard3 = Oystercard.new(40)
+    oystercard3.deduct(5)
+    expect( oystercard3.balance ).to eq(35)
+    end
+
+  end
+
 end

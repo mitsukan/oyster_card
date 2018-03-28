@@ -53,3 +53,5 @@ Wrote a test to look for an error raised if the balance exceeds the £90 cap tha
 We had an interesting dicussion in regards to the RSpec syntaxing, and the differences with the old `should be` lines vs `expect`. Ideally we would be looking to use `expect` instead of should.
 
 #### Challenge 7: Deducting money
+
+Taking similar testing methodology for the `top_up` method, I implemented and passed the `deduct` method.
