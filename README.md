@@ -54,4 +54,12 @@ We had an interesting dicussion in regards to the RSpec syntaxing, and the diffe
 
 #### Challenge 7: Deducting money
 
-Taking similar testing methodology for the `top_up` method, I implemented and passed the `deduct` method.
+Taking similar testing methodology for the `top_up` method, we implemented and passed the `deduct` method.
+
+#### Challenge 8: Touch in and out
+
+Added a test in the class to check for the `@in_journey` tracker.
+Testing the method `in_journey` that returns the instance variable.
+Testing the methods `touch_in` and `touch_out`, calling `subject.in_journey?`and testing the return boolean.
+
+#### Challenge 9: Checking minimum balance for touch in
