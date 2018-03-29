@@ -77,3 +77,15 @@ Added a MINBAL constant, made the deduct method a private one.
 #### Challenge 11: Saving entry station
 
 Added station_entry, modified touch_in and touch_out to meet specs.
+
+#### Challenge 12: Journey history
+
+Firstly created a `journey_history` array that's saved as an instance variable, with the `attr_reader` for it. Followed the instructions to refactor the touch_out method.
+
+Used a test to check for a default empty `journey_history` array.
+
+Used a test to expect `journey_history` to contain the require hash into the array.
+
+Implemented code to satisfy the tests written.
+
+#### Challenge 13

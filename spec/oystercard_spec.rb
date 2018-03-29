@@ -10,6 +10,10 @@ describe Oystercard do
     expect(subject.in_journey).to eq(false)
   end
 
+  it "has an empty journey_history" do
+    expect(subject.journey_history).to eq ([])
+  end
+
   describe "#top_up" do
 
     it "adds money to balance" do
@@ -28,7 +32,7 @@ describe Oystercard do
     oystercard = Oystercard.new(40)
     station = double(:station_entry)
     oystercard.touch_in(station)
-    oystercard.touch_out
+    oystercard.touch_out(station)
     expect( oystercard.balance ).to eq(39)
     end
   end
@@ -73,24 +77,36 @@ describe Oystercard do
       subject.top_up(10)
       station = double(:station_entry)
       subject.touch_in(station)
-      subject.touch_out
+      subject.touch_out(station)
       expect(subject.in_journey?).to eq(false)
     end
 
     it "expect touching out to reduce balance by minimum fare" do
       subject.top_up(10)
-      station = double(:station_entry)
-      subject.touch_in(station)
-      expect {subject.touch_out}.to change{subject.balance}.by(-1)
+      stationin = double(:station_entry)
+      stationout = double(:station_exit)
+      subject.touch_in(stationin)
+      expect {subject.touch_out(stationout)}.to change{subject.balance}.by(-1)
     end
 
     it "sets station_entry to nil" do
       subject.top_up(10)
       station = double(:station_entry)
       subject.touch_in(station)
-      subject.touch_out
+      subject.touch_out(station)
       expect(subject.station_entry).to be_nil
     end
+
+    it "saves in and out into a hash and pushes into journey_history array" do
+      subject.top_up(20)
+      stationin = double(:station_in)
+      stationout = double(:station_out)
+      subject.touch_in(stationin)
+      subject.touch_out(stationout)
+      expect(subject.journey_history).to eq([{stationin => stationout}])
+    end
+
+
 
   end
 end
