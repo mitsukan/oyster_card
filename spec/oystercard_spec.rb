@@ -24,10 +24,11 @@ describe Oystercard do
   end
 
   describe "#deduct" do
-    it "deducts money" do
+    it "deducts money using touch_out" do
     oystercard = Oystercard.new(40)
-    oystercard.deduct(5)
-    expect( oystercard.balance ).to eq(35)
+    oystercard.touch_in
+    oystercard.touch_out
+    expect( oystercard.balance ).to eq(39)
     end
   end
 
@@ -62,6 +63,13 @@ describe Oystercard do
       subject.touch_out
       expect(subject.in_journey?).to eq(false)
     end
+
+    it "expect touching out to reduce balance by minimum fare" do
+      subject.top_up(10)
+      subject.touch_in
+      expect {subject.touch_out}.to change{subject.balance}.by(-1)
+    end
+
   end
 end
 

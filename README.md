@@ -70,4 +70,6 @@ Implemented a constant to have a minimum spend.
 
 ### Day 4: Jihin, Sam and Louis
 
-#### Challenge 10:
+#### Challenge 10: Charging for the journey
+
+Added a MINBAL constant, made the deduct method a private one.
