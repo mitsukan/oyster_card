@@ -63,3 +63,11 @@ Testing the method `in_journey` that returns the instance variable.
 Testing the methods `touch_in` and `touch_out`, calling `subject.in_journey?`and testing the return boolean.
 
 #### Challenge 9: Checking minimum balance for touch in
+
+Added testing for a raise error if top up exceeds max.
+Implemented a constant to have a minimum spend.
+
+
+### Day 4: Jihin, Sam and Louis
+
+#### Challenge 10:
