@@ -27,6 +27,7 @@ class Oystercard
 
   def touch_out
     deduct(MINBAL)
+    @station_entry = nil
     @in_journey = false
   end
 

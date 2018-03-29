@@ -84,6 +84,14 @@ describe Oystercard do
       expect {subject.touch_out}.to change{subject.balance}.by(-1)
     end
 
+    it "sets station_entry to nil" do
+      subject.top_up(10)
+      station = double(:station_entry)
+      subject.touch_in(station)
+      subject.touch_out
+      expect(subject.station_entry).to be_nil
+    end
+
   end
 end
 
