@@ -13,23 +13,23 @@ class Oystercard
   end
 
   def top_up(amount)
-    raise "Too much, limit is £90." if (@balance + amount) > MAXBAL
+    raise "Too much, limit is £90." if (balance + amount) > MAXBAL
     @balance += amount
   end
 
   def in_journey?
-    @in_journey
+    in_journey
   end
 
   def touch_in(entry_station)
-    raise "Not enough funds!" if @balance < MINBAL
+    raise "Not enough funds!" if balance < MINBAL
     @station_entry = entry_station
     @in_journey = true
   end
 
   def touch_out(exit_station)
     deduct(MINBAL)
-    journey = {@station_entry => exit_station}
+    journey = {station_entry => exit_station}
     @journey_history.push(journey)
     @station_entry = nil
     @in_journey = false

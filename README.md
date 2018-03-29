@@ -89,3 +89,5 @@ Used a test to expect `journey_history` to contain the require hash into the arr
 Implemented code to satisfy the tests written.
 
 #### Challenge 13
+
+Tested and implemented a new `Station` class, so that they can receive two arguments: station name and zone number.

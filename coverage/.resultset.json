@@ -168,8 +168,36 @@
         null,
         null,
         null
+      ],
+      "/Users/jihinip/Projects/oyster_card/spec/station_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/jihinip/Projects/oyster_card/lib/station.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1522333529
+    "timestamp": 1522343938
   }
 }
